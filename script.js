@@ -191,88 +191,62 @@ function saludar() {
   const nombre = prompt("Hola como va, ingresa tu nombre por favor...")
   if (nombre !== null) {
     const mensaje = "!!Hola, " + nombre + "!! Bienvenido/a a mi tienda"
-    alert (mensaje)
+    alert(mensaje)
   }
 }
 
 saludar()
 
 const productos = [
-  {
-    id: 1,
-    nombre: "run falcon",
-    marca: "adidas",
-    material: "tela de avion",
-    precio: 15000,
-    stock: 3
-  },
-  {
-    id: 2,
-    nombre: "ultraboost",
-    marca: "adidas",
-    material: "tela de avion",
-    precio: 25000,
-    stock: 5
-  },
-  {
-    id: 3,
-    nombre: "cortez",
-    marca: "nike",
-    material: "cuero",
-    precio: 20000,
-    stock: 2
-  },
-  {
-    id: 4,
-    nombre: "jordan",
-    marca: "nike",
-    material: "cuero",
-    precio: 35000,
-    stock: 1
-  },
-  {
-    id: 5,
-    nombre: "kayano",
-    marca: "asics",
-    material: "tela engomada",
-    precio: 17000,
-    stock: 4
-  },
-  {
-    id: 6,
-    nombre: "nimbus",
-    marca: "asics",
-    material: "tela engomada",
-    precio: 17000,
-    stock: 1
-  },
-  {
-    id: 7,
-    nombre: "bmw",
-    marca: "puma",
-    material: "cuero",
-    precio: 15000,
-    stock: 6
-  }
+  { id: 1, nombre: "run falcon", marca: "adidas", material: "tela de avion", precio: 15000, stock: 3 },
+  { id: 2, nombre: "ultraboost", marca: "adidas", material: "tela de avion", precio: 25000, stock: 5 },
+  { id: 3, nombre: "cortez", marca: "nike", material: "cuero", precio: 20000, stock: 2 },
+  { id: 4, nombre: "jordan", marca: "nike", material: "cuero", precio: 35000, stock: 1 },
+  { id: 5, nombre: "kayano", marca: "asics", material: "tela engomada", precio: 17000, stock: 4 },
+  { id: 6, nombre: "nimbus", marca: "asics", material: "tela engomada", precio: 17000, stock: 1 },
+  { id: 7, nombre: "bmw", marca: "puma", material: "cuero", precio: 15000, stock: 6 }
 ]
 
+let opcion
 
+do {
+  opcion = Number(prompt("ingresa la opcion que deseas:\n1 - Ver lista de productos\n2 - Buscar producto por marca\n3 - Buscar producto por id\n4 - Agregar producto al carrito\n5 - Finalizar"))
+  switch (opcion) {
+    case 1:
+      const listaProductos = listar(productos)
+      /* alert(listaProductos) */
+      if (listaProductos) {
+        alert("Lista de productos:\n\n" + listaProductos)
+      } else {
+        alert("No se encontraron productos.")
+      }
+      break;
 
-let elegirMarca = prompt("ingrese marca que desea encontrar").toLowerCase()
-
-
-
-let productosEncontrados = []
-
-for (let i = 0; i < productos.length; i++) {
-  const producto = productos[i];
-  if (producto.marca.toLowerCase() === elegirMarca) {
-    productosEncontrados.push(`Nombre: ${producto.nombre}, Marca: ${producto.marca}, Precio: $${producto.precio}`)
+    default:
+      break;
   }
-}
+} while (opcion != 0)
 
-if (productosEncontrados.length > 0) {
+
+
+function listar(productos) {
+  let lista = ""
+  for (let i = 0; i < productos.length; i++) {
+    const producto = productos[i]
+    lista += `Nombre: ${producto.nombre} , Marca: ${producto.marca}, Precio: ${producto.precio}\n`
+  }
+  return lista
+}
+let productosEncontrados = []
+/* if (productosEncontrados.length > 0) {
+  for (let i = 0; i < productos.length; i++) {
+    const producto = productos[i];
+    if (producto.marca.toLowerCase() === elegirMarca) {
+      productosEncontrados.push(`Nombre: ${producto.nombre}, Marca: ${producto.marca}, Precio: $${producto.precio}`)
+
+    }
+  }
   alert(`Productos con la marca "${elegirMarca}":\n\n${productosEncontrados.join("\n")}`)
 } else {
   alert(`No se encontraron productos con la marca "${elegirMarca}".`)
-}
+} */

@@ -210,19 +210,27 @@ const productos = [
 let opcion
 
 do {
-  opcion = Number(prompt("ingresa la opcion que deseas:\n1 - Ver lista de productos\n2 - Buscar producto por marca\n3 - Buscar producto por id\n4 - Agregar producto al carrito\n5 - Finalizar"))
+  opcion = Number(prompt("Seleccioná alguna de las siguientes opciones:\n1 - Ver lista de productos\n2 - Buscar producto por marca\n3 - Buscar producto por id\n4 - Agregar producto al carrito\n5 - Finalizar"))
   switch (opcion) {
     case 1:
       const listaProductos = listar(productos)
-      /* alert(listaProductos) */
+
       if (listaProductos) {
-        alert("Lista de productos:\n\n" + listaProductos)
+        alert("Estos son los productos que tenemos para ofrecerte:\n\n" + listaProductos)
       } else {
         alert("No se encontraron productos.")
       }
       break;
 
-    default:
+    case 2:
+      const marcaBuscada = prompt("Que marca en especifico buscas ? ingresala aqui por favor:").toLowerCase()
+      const productosEncontrados = productoPorMarca(productos, marcaBuscada)
+      if (productosEncontrados.length > 0) {
+        alert(`Productos con la marca "${marcaBuscada}":\n\n${productosEncontrados.join("\n")}`)
+      } else {
+        alert("No hay productos con esa marca")
+
+      }
       break;
   }
 } while (opcion != 0)
@@ -237,16 +245,25 @@ function listar(productos) {
   }
   return lista
 }
-let productosEncontrados = []
-/* if (productosEncontrados.length > 0) {
+
+function productoPorMarca(productos, marca) {
+
+  const productosEncontrados = []
+
+
   for (let i = 0; i < productos.length; i++) {
     const producto = productos[i];
-    if (producto.marca.toLowerCase() === elegirMarca) {
+    if (producto.marca.toLowerCase() === marca) {
       productosEncontrados.push(`Nombre: ${producto.nombre}, Marca: ${producto.marca}, Precio: $${producto.precio}`)
 
     }
   }
-  alert(`Productos con la marca "${elegirMarca}":\n\n${productosEncontrados.join("\n")}`)
+
+  return productosEncontrados
+}
+/* alert(`Productos con la marca "${elegirMarca}":\n\n${productosEncontrados.join("\n")}`)
 } else {
-  alert(`No se encontraron productos con la marca "${elegirMarca}".`)
+alert(`No se encontraron productos con la marca "${elegirMarca}".`)
 } */
+
+

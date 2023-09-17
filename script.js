@@ -184,12 +184,16 @@ function buscarPorId() {
 
 mostrarMenu()
 */
-// HOLA TUTOR CORRECTOR , ESTA ES MI SEGUNDA PRE ENTREGA 
+
+
+// HOLA TUTOR CORRECTOR , ESTA ES MI SEGUNDA PRE ENTREGA. DISCULPA POR EL CODIGO COMENTADO EN LAS LINEAS ANTERIORES ES QUE ME SIRVEN Y NO QUIERO BORRARLOS TODAVIA .
+
 
 // se saluda a nuestro usuario y se le pregunta su nombre
 
 function saludar() {
   const nombre = prompt("Hola como va, ingresa tu nombre por favor...")
+
   if (nombre !== null) {
     const mensaje = "!!Hola, " + nombre + "!! Bienvenido/a a mi tienda"
     alert(mensaje)
@@ -198,7 +202,7 @@ function saludar() {
 
 saludar()
 
-// creacion de productos en array de objetos
+// creacion de productos en ARRAY DE OBJEROS
 
 const productos = [
   { id: 1, nombre: "run falcon", marca: "adidas", material: "tela de avion", precio: 15000, stock: 3 },
@@ -209,13 +213,16 @@ const productos = [
   { id: 6, nombre: "nimbus", marca: "asics", material: "tela engomada", precio: 17000, stock: 1 },
   { id: 7, nombre: "bmw", marca: "puma", material: "cuero", precio: 15000, stock: 6 }
 ]
+// me costo entender que la variable carrito se debe llamar antes de las opciones jaja
 
-// funcion de opciones para usuario
+const carrito = []
+
+// funcion de opciones para usuario mediante DO WHILE
 
 let opcion
 
 do {
-  opcion = Number(prompt("Seleccioná alguna de las siguientes opciones:\n1 - Ver lista de productos\n2 - Buscar producto por marca\n3 - Buscar producto por id\n4 - Agregar producto al carrito\n0 - Finalizar"))
+  opcion = Number(prompt("Seleccioná alguna de las siguientes opciones:\n1 - Ver lista de productos\n2 - Buscar producto por marca\n3 - Buscar producto por id\n4 - Filttrar productos\n5 - Agregar producto al carrito\n6 - Finalizar compra\n 0 - Salir"))
   switch (opcion) {
     case 1:
       const listaProductos = listar(productos)
@@ -239,21 +246,30 @@ do {
       break
 
     case 3:
-      const productoEncontrado = buscarPorId()
-      if (productoEncontrado) {
-        buscarPorId()
+      buscarPorId()
+      break
+    case 4:
+
+      const precioMinimo = parseFloat(prompt("Ingrese el precio mínimo para filtrar productos por favor: "))
+      const productosFiltrados = filtrar(productos, precioMinimo)
+      if (productosFiltrados.length > 0) {
+        alert(`Productos con precio mayor a $${precioMinimo}:\n\n${productosFiltrados.map(producto => `Nombre: ${producto.nombre} Marca: ${producto.marca} Precio: $${producto.precio}`).join("\n")}`)
+      } else {
+        alert("No hay productos que cumplan con el filtro especificado.")
       }
       break
-      case 4:
-        const productoAgregado =buscarPorId()
-        if (productoAgregado) {
-          agregarAlCarrito()
-        }
-        break
+    case 5:
+      agregarAlCarrito()
+      break
+    case 6:
+      mostrarCarrito(carrito)
+      break
   }
-} while (opcion != 0)
+} while (opcion != 0){
+  alert ("!!!Muchas gracias por visitarnos vuelva pronto por favor!!!")
+}
 
-// funcion listar productos pedida por el usuario
+// funcion listar productos
 
 
 function listar(productos) {
@@ -269,9 +285,7 @@ function listar(productos) {
 // funcion para buscar producto por marca
 
 function productoPorMarca(productos, marca) {
-
   const productosEncontrados = []
-
 
   for (let i = 0; i < productos.length; i++) {
     const producto = productos[i];
@@ -284,7 +298,7 @@ function productoPorMarca(productos, marca) {
   return productosEncontrados
 }
 
-// funcion buscar por id por find
+// funcion buscar por id con FIND
 
 function buscarPorId() {
   const idProducto = parseInt(prompt("Ingrese el ID del producto que desea buscar: "))
@@ -292,26 +306,48 @@ function buscarPorId() {
 
   if (productoEncontrado) {
     alert(`Producto encontrado\n Nombre: ${productoEncontrado.nombre}\n Marca: ${productoEncontrado.marca}\n Precio: $${productoEncontrado.precio}\n`)
+    return productoEncontrado
   } else {
-    alert("Producto no encontrado. Verifique el ID ingresado.")
+
+    return null
   }
 }
 
 // funcion agregar al carrito
 
-const carrito = []
-
 function agregarAlCarrito() {
-  const idProducto = parseInt(prompt("Ingrese el ID del producto que desea agregar al carrito: "))
-  const productoAgregado = productos.find((producto) => producto.id === idProducto)
+  const productoAgregado = buscarPorId()
 
-  if (productoAgregado) {
-    carrito.push(productoAgregado);
+  if (productoAgregado !== null) {
+    carrito.push(productoAgregado)
     alert(`${productoAgregado.nombre} con el precio de $${productoAgregado.precio} se ha agregado al carrito.`)
   } else {
     alert("Producto no agregado al carrito, Verifique el ID ingresado por favor.")
   }
-  return productoAgregado
+
 }
 
-// funcion filtrar
+// funcion filtrar utilizando FILTER
+
+function filtrar(productos, precioMinimo) {
+  return productos.filter(producto => producto.precio > precioMinimo)
+}
+
+// finalizar compra y sumar productos 
+function mostrarCarrito(carrito) {
+
+  if (carrito.length === 0) {
+    alert("El carrito está vacío. No se han agregado productos.")
+  } else {
+    let mensajeCarrito = "Productos en el carrito:\n"
+    let total = 0
+    carrito.forEach(producto => {
+      mensajeCarrito += `Nombre: ${producto.nombre}, Marca: ${producto.marca}, Precio: $${producto.precio}\n`
+      total += producto.precio
+    })
+    mensajeCarrito += `Total a pagar: $${total}`
+    alert(mensajeCarrito)
+  }
+}
+
+// MUCHAS GRACIAS Y ESPERO SU DEVOLUCION PARA MEJORAR 

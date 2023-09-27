@@ -1,9 +1,39 @@
 * {
     padding: 0;
-    margin: 0;
+    margin: 10px; 
+}
+body{
+    font-family: 'Carter One', cursive;
+    font-family: 'Cinzel', serif;
+    font-family: 'Handlee', cursive;
+    font-family: 'Mulish', sans-serif;
+    background-image: url(../img_zapas/imgfondo5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.carta {
-    border-radius: 2px solid black;
+.img {
+    width: 150px;
+    height: 150px;
+
+}
+
+#contenedor {
+    width: 85%;
+    margin: 25px auto;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cards {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 15px;
+}
+
+.nombreZapa {
+    color: black;
 
 }

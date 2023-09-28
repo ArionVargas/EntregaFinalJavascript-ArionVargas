@@ -19,7 +19,7 @@ body{
 }
 
 #contenedor {
-    width: 85%;
+    width: 90%;
     margin: 25px auto;
     padding: 10px;
     display: flex;
@@ -36,4 +36,16 @@ body{
 .nombreZapa {
     color: black;
 
+}
+
+.precioZapa{
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.boton{
+    width: 75%;
+    
 }

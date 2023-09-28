@@ -201,6 +201,7 @@ productos.forEach(producto => {
   tarjeta.innerHTML = `<h3 class=nombreZapa>${producto.nombre}</h3>
   <img class=img src=./img_zapas/${producto.rutaimg}>
   <p class=precioZapa>$ ${producto.precio}</p>
+  <button class=boton>agregar al carrito</button> 
   `
   contenedor.appendChild(tarjeta)
 })

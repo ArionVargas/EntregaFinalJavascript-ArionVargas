@@ -191,9 +191,6 @@ function mostrarCarrito(carrito) {
 
 let contenedor = document.getElementById("contenedor")
 
-/* contenedor.innerHTML += "<div class=tarjetas> zapa 1<div>"
-contenedor.innerHTML += "<div class=tarjetas> zapa 2<div>"
-contenedor.innerHTML += "<div class=tarjetas> zapa 3<div>" */
 
 productos.forEach(producto => {
   let tarjeta = document.createElement("div")

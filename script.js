@@ -18,35 +18,73 @@ saludar()
 // creacion de productos en ARRAY DE OBJEROS
 */
 const productos = [
-  { id: 1, nombre: "response", marca: "adidas", precio: 58000,rutaimg: "adidas-response.jpg", sexo: "hombre", stock: 3 },
-  { id: 2, nombre: "grand court", marca: "adidas", precio: 45000,rutaimg: "adidas-grandcourt.jpg", sexo: "dama", stock: 5 },
-  { id: 3, nombre: "streetcheck", marca: "adidas", precio: 49000,rutaimg: "adidas-streetcheck.jpg", sexo: "dama", stock: 2 },
-  { id: 4, nombre: "streetcheck2", marca: "adidas", precio: 49000,rutaimg: "adidas-streetcheck2.jpg", sexo: "dama", stock: 1 },
-  { id: 5, nombre: "ultraboost", marca: "adidas", precio: 74000,rutaimg: "adidas-ultraboost.jpg", sexo: "hombre", stock: 4 },
-  { id: 6, nombre: "pureboost", marca: "adidas", precio: 53000,rutaimg: "adidas-pureboost.jpg", sexo: "dama", stock: 1 },
-  { id: 7, nombre: "hypersonic", marca: "asics", precio: 40000,rutaimg: "asics-hypersonic.jpg", sexo: "hombre", stock: 6 },
-  { id: 8, nombre: "equation", marca: "asics", precio: 36000,rutaimg: "asics-equation.jpg", sexo: "hombre", stock: 1 },
-  { id: 9, nombre: "gel-kamo", marca: "asics", precio: 31000,rutaimg: "asics-gelkamo.jpg", sexo: "dama", stock: 1 },
-  { id: 10, nombre: "nagoya", marca: "asics", precio: 83000,rutaimg: "asics-nagoya.jpg", sexo: "dama", stock: 1 },
-  { id: 11, nombre: "nimbus", marca: "asics", precio: 83000,rutaimg: "asics-nimbus.jpg", sexo: "dama", stock: 1 },
-  { id: 12, nombre: "cumulus", marca: "asics", precio: 65000,rutaimg: "asics-cumulus.jpg", sexo: "hombre", stock: 1 },
-  { id: 13, nombre: "cumulus2", marca: "asics", precio: 65000,rutaimg: "asics-cumulus2.jpg", sexo: "hombre", stock: 1 },
-  { id: 14, nombre: "pacemaker", marca: "asics", precio: 38000,rutaimg: "asics-pacemaker.jpg", sexo: "dama", stock: 1 },
-  { id: 15, nombre: "backhand", marca: "asics", precio: 33000,rutaimg: "asics-backhand.jpg", sexo: "hombre", stock: 1 },
-  { id: 16, nombre: "padel1", marca: "bullpadel", precio: 109000,rutaimg: "bullpadel-padel1.jpg", sexo: "hombre", stock: 1 },
-  { id: 17, nombre: "vertex", marca: "bullpadel", precio: 109000,rutaimg: "bullpadel-vertex.jpg", sexo: "hombre", stock: 1 },
-  { id: 18, nombre: "flow", marca: "bullpadel", precio: 23000,rutaimg: "bullpadel-flow.jpg", sexo: "dama", stock: 1 },
-  { id: 19, nombre: "hybrid", marca: "bullpadel", precio: 125000,rutaimg: "bullpadel-hybrid.jpg", sexo: "dama", stock: 1 },
-  { id: 20, nombre: "gm500sd", marca: "newbalance", precio: 36000,rutaimg: "newbalance-gm500sd.jpg", sexo: "hombre", stock: 1 },
-  { id: 21, nombre: "m520hd", marca: "newbalance", precio: 36000,rutaimg: "newbalance-m520hd.jpg", sexo: "hombre", stock: 1 },
-  { id: 22, nombre: "ml570tb", marca: "newbalance", precio: 49000,rutaimg: "newbalance-ml570tb.jpg", sexo: "dama", stock: 1 },
-  { id: 23, nombre: "gw112c", marca: "newbalance", precio: 36000,rutaimg: "newbalance-gw112c.jpg", sexo: "dama", stock: 1 },
-  { id: 24, nombre: "we1080ll", marca: "newbalance", precio: 37000,rutaimg: "newbalance-we1080ll.jpg", sexo: "dama", stock: 1 },
-  { id: 25, nombre: "charged", marca: "underarmour", precio: 35000,rutaimg: "underarmour-charged.jpg", sexo: "hombre", stock: 1 },
-  { id: 26, nombre: "charged2", marca: "underarmour", precio: 38000,rutaimg: "underarmour-charged2.jpg", sexo: "hombre", stock: 1 },
-  { id: 27, nombre: "pacer", marca: "underarmour", precio: 42000,rutaimg: "underarmour-pacer.jpg", sexo: "dama", stock: 1 },
-  { id: 28, nombre: "cahrged3", marca: "underarmour", precio: 37000,rutaimg: "underarmour-charged3.jpg", sexo: "hombre", stock: 1 },
+  { id: 1, nombre: "response", marca: "adidas", precio: 58000, rutaimg: "adidas-response.jpg", sexo: "hombre", stock: 3 },
+  { id: 2, nombre: "grand court", marca: "adidas", precio: 45000, rutaimg: "adidas-grandcourt.jpg", sexo: "dama", stock: 5 },
+  { id: 3, nombre: "streetcheck", marca: "adidas", precio: 49000, rutaimg: "adidas-streetcheck.jpg", sexo: "dama", stock: 2 },
+  { id: 4, nombre: "streetcheck2", marca: "adidas", precio: 49000, rutaimg: "adidas-streetcheck2.jpg", sexo: "dama", stock: 1 },
+  { id: 5, nombre: "ultraboost", marca: "adidas", precio: 74000, rutaimg: "adidas-ultraboost.jpg", sexo: "hombre", stock: 4 },
+  { id: 6, nombre: "pureboost", marca: "adidas", precio: 53000, rutaimg: "adidas-pureboost.jpg", sexo: "dama", stock: 1 },
+  { id: 7, nombre: "hypersonic", marca: "asics", precio: 40000, rutaimg: "asics-hypersonic.jpg", sexo: "hombre", stock: 6 },
+  { id: 8, nombre: "equation", marca: "asics", precio: 36000, rutaimg: "asics-equation.jpg", sexo: "hombre", stock: 1 },
+  { id: 9, nombre: "gel-kamo", marca: "asics", precio: 31000, rutaimg: "asics-gelkamo.jpg", sexo: "dama", stock: 1 },
+  { id: 10, nombre: "nagoya", marca: "asics", precio: 83000, rutaimg: "asics-nagoya.jpg", sexo: "dama", stock: 1 },
+  { id: 11, nombre: "nimbus", marca: "asics", precio: 83000, rutaimg: "asics-nimbus.jpg", sexo: "dama", stock: 1 },
+  { id: 12, nombre: "cumulus", marca: "asics", precio: 65000, rutaimg: "asics-cumulus.jpg", sexo: "hombre", stock: 1 },
+  { id: 13, nombre: "cumulus2", marca: "asics", precio: 65000, rutaimg: "asics-cumulus2.jpg", sexo: "hombre", stock: 1 },
+  { id: 14, nombre: "pacemaker", marca: "asics", precio: 38000, rutaimg: "asics-pacemaker.jpg", sexo: "dama", stock: 1 },
+  { id: 15, nombre: "backhand", marca: "asics", precio: 33000, rutaimg: "asics-backhand.jpg", sexo: "hombre", stock: 1 },
+  { id: 16, nombre: "padel1", marca: "bullpadel", precio: 109000, rutaimg: "bullpadel-padel1.jpg", sexo: "hombre", stock: 1 },
+  { id: 17, nombre: "vertex", marca: "bullpadel", precio: 109000, rutaimg: "bullpadel-vertex.jpg", sexo: "hombre", stock: 1 },
+  { id: 18, nombre: "flow", marca: "bullpadel", precio: 23000, rutaimg: "bullpadel-flow.jpg", sexo: "dama", stock: 1 },
+  { id: 19, nombre: "hybrid", marca: "bullpadel", precio: 125000, rutaimg: "bullpadel-hybrid.jpg", sexo: "dama", stock: 1 },
+  { id: 20, nombre: "gm500sd", marca: "newbalance", precio: 36000, rutaimg: "newbalance-gm500sd.jpg", sexo: "hombre", stock: 1 },
+  { id: 21, nombre: "m520hd", marca: "newbalance", precio: 36000, rutaimg: "newbalance-m520hd.jpg", sexo: "hombre", stock: 1 },
+  { id: 22, nombre: "ml570tb", marca: "newbalance", precio: 49000, rutaimg: "newbalance-ml570tb.jpg", sexo: "dama", stock: 1 },
+  { id: 23, nombre: "gw112c", marca: "newbalance", precio: 36000, rutaimg: "newbalance-gw112c.jpg", sexo: "dama", stock: 1 },
+  { id: 24, nombre: "we1080ll", marca: "newbalance", precio: 37000, rutaimg: "newbalance-we1080ll.jpg", sexo: "dama", stock: 1 },
+  { id: 25, nombre: "charged", marca: "underarmour", precio: 35000, rutaimg: "underarmour-charged.jpg", sexo: "hombre", stock: 1 },
+  { id: 26, nombre: "charged2", marca: "underarmour", precio: 38000, rutaimg: "underarmour-charged2.jpg", sexo: "hombre", stock: 1 },
+  { id: 27, nombre: "pacer", marca: "underarmour", precio: 42000, rutaimg: "underarmour-pacer.jpg", sexo: "dama", stock: 1 },
+  { id: 28, nombre: "cahrged3", marca: "underarmour", precio: 37000, rutaimg: "underarmour-charged3.jpg", sexo: "hombre", stock: 1 },
 ]
+
+renderizarProductos(productos)
+
+function renderizarProductos(productos) {
+  let contenedor = document.getElementById("contenedor")
+  contenedor.innerHTML = ""
+
+  productos.forEach(producto => {
+    let tarjeta = document.createElement("div")
+    tarjeta.className = "cards"
+
+    tarjeta.innerHTML = `<h3 class=nombreZapa>${producto.nombre}</h3>
+    <img class=img src=./img_zapas/${producto.rutaimg}>
+    <p class=precioZapa>$ ${producto.precio}</p>
+    <button class=boton>agregar al carrito</button> 
+    `
+    contenedor.appendChild(tarjeta)
+  })
+}
+
+let buscar = document.getElementById("buscar")
+let filtrar = document.getElementById("filtrar")
+
+buscar.addEventListener("click", () => filtrarProductos(productos))
+
+function filtrarProductos(productos) {
+  let productosFiltrados = productos.filter(producto => producto.marca.includes(filtrar.value))
+  renderizarProductos(productosFiltrados)
+}
+
+
+
+
+
+
+
+
+
 
 // me costo entender que la variable carrito se debe llamar antes de las opciones jaja
 /*
@@ -119,6 +157,7 @@ function listar(productos) {
 
 // funcion para buscar producto por marca
 
+
 function productoPorMarca(productos, marca) {
   const productosEncontrados = []
 
@@ -168,7 +207,7 @@ function filtrar(productos, precioMinimo) {
   return productos.filter(producto => producto.precio > precioMinimo)
 }
 
-// finalizar compra y sumar productos 
+// finalizar compra y sumar productos
 function mostrarCarrito(carrito) {
 
   if (carrito.length === 0) {
@@ -185,20 +224,8 @@ function mostrarCarrito(carrito) {
   }
 } */
 
-// MUCHAS GRACIAS Y ESPERO SU DEVOLUCION PARA MEJORAR 
+// MUCHAS GRACIAS Y ESPERO SU DEVOLUCION PARA MEJORAR
 
 // DOM 
 
-let contenedor = document.getElementById("contenedor")
 
-
-productos.forEach(producto => {
-  let tarjeta = document.createElement("div")
-  tarjeta.className = "cards"
-  tarjeta.innerHTML = `<h3 class=nombreZapa>${producto.nombre}</h3>
-  <img class=img src=./img_zapas/${producto.rutaimg}>
-  <p class=precioZapa>$ ${producto.precio}</p>
-  <button class=boton>agregar al carrito</button> 
-  `
-  contenedor.appendChild(tarjeta)
-})

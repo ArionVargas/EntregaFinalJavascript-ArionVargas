@@ -1,8 +1,9 @@
 * {
     padding: 0;
-    margin: 10px; 
+    margin: 10px;
 }
-body{
+
+body {
     font-family: 'Carter One', cursive;
     font-family: 'Cinzel', serif;
     font-family: 'Handlee', cursive;
@@ -38,15 +39,23 @@ body{
 
 }
 
-.precioZapa{
+.precioZapa {
     color: white;
     position: relative;
     display: flex;
     justify-content: center;
 }
 
-.boton{
-    width: 85%;
+.boton {
+    width: 100%;
     display: flex;
     justify-content: center;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: white;
+    border-radius: 8px;
+}
+
+.boton:hover {
+    color: black;
+    background-color: white;
 }

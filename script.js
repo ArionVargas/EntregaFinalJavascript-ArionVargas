@@ -48,9 +48,11 @@ const productos = [
   { id: 28, nombre: "cahrged3", marca: "underarmour", precio: 37000, rutaimg: "underarmour-charged3.jpg", sexo: "hombre", stock: 1 },
 ]
 
-renderizarProductos(productos)
+let carrito = []
 
-function renderizarProductos(productos) {
+renderizarProductos(productos, carrito)
+
+function renderizarProductos(productos, carrito) {
   let contenedor = document.getElementById("contenedor")
   contenedor.innerHTML = ""
 
@@ -61,10 +63,55 @@ function renderizarProductos(productos) {
     tarjeta.innerHTML = `<h3 class=nombreZapa>${producto.nombre}</h3>
     <img class=img src=./img_zapas/${producto.rutaimg}>
     <p class=precioZapa>$ ${producto.precio}</p>
-    <button class=boton>agregar al carrito</button> 
+    <button class=boton id=${producto.id}>agregar al carrito</button> 
     `
     contenedor.appendChild(tarjeta)
+
+    let botonAgregarAlCarrito = document.getElementById(producto.id)
+    botonAgregarAlCarrito.addEventListener("click", (e) => agregarProductoAlCarrito(productos, carrito, e))
   })
+}
+
+function agregarProductoAlCarrito(productos, carrito, e) {
+  let productoBuscado = productos.find(producto => producto.id === Number(e.target.id))
+  let productoEnCarrito = carrito.find(producto => producto.id === productoBuscado.id)
+  if (productoBuscado.stock > 0) {
+    if (productoEnCarrito) {
+      productoEnCarrito.unidades++
+      productoEnCarrito.subtotal = productoEnCarrito.unidades * productoEnCarrito.precioUnitario
+    }else {
+     carrito.push({
+      id: productoBuscado.id,
+      nombre: productoBuscado.nombre,
+      precioUnitario: productoBuscado.precio,
+      unidades: 1,
+      subtotal: productoBuscado.precio
+     })
+   }
+   productoBuscado.stock--
+   alert("Producto agregado al carrito correctamente")
+  }else {
+    alert("No queda stock del producto seleccionado")
+  }
+  renderizarCarrito(carrito)
+}
+
+function renderizarCarrito(productosEnCarrito) {
+  let divCarrito = document.getElementById("carrito")
+  divCarrito.innerHTML = ""
+  productosEnCarrito.forEach(producto =>{
+    let cardProductoEnCarrito = document.createElement("div")
+    cardProductoEnCarrito.innerHTML = `
+    <img class=img src=./img_zapas/${producto.rutaimg}>
+    <p>${producto.nombre}
+    <p>$${producto.precioUnitario}
+    <p>${producto.unidades}
+    <p>$${producto.subtotal}
+    `
+    divCarrito.appendChild(cardProductoEnCarrito)
+
+  })
+
 }
 
 let buscar = document.getElementById("buscar")

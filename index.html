@@ -8,6 +8,8 @@
     <meta name="keywords" content="">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link
         href="https://fonts.googleapis.com/css2?family=Carter+One&family=Cinzel:wght@500&family=Handlee&family=Mulish:ital@1&display=swap"
         rel="stylesheet">
@@ -19,15 +21,35 @@
 
 <body>
     <header>
-        <div>logo Tienda</div>
-        <hr>
+        <nav id="contenedor-logo-carrito">
+            <div>logo Tienda</div>
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"><span class="material-symbols-outlined">
+                    garden_cart
+                </span></button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasRightLabel">Productos en su carrito</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div id="carrito">
+
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
     <h1 id="titulo">TITULO TIENDA</h1>
-
-    <div>
-        <input id="filtrar" type="search" placeholder="ingrese marca">
-        <button id="buscar" type="button" class="btn btn-outline-light">buscar calzado</button>
+    <div class="contenedorFiltro">
+        <h3 class="encabezado">Bienvenido/a aqui puedes filtrar por Marca </h3>
+        <div class="buscador">
+            <input id="filtrar" type="search" placeholder="ingrese marca">
+            <button id="buscar" type="button" class="btn btn-outline-light">buscar calzado</button>
+        </div>
     </div>
+
     <main>
         <div id="contenedor">
             <!-- <button class="agregarCarrito" type="button" class="btn btn-outline-light">agregar al carrito</button> -->

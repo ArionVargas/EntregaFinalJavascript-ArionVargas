@@ -59,3 +59,27 @@ body {
     color: black;
     background-color: white;
 }
+
+.contenedorFiltro{
+    display: flex;
+    justify-content: space-around;
+}
+
+.buscador{
+    display: flex;
+    justify-content: end;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
+
+  #contenedor-logo-carrito{
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+  }

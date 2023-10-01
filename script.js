@@ -50,8 +50,17 @@ const productos = [
 
 let carrito = []
 
+// DOM 
+let buscar = document.getElementById("buscar")
+let filtrar = document.getElementById("filtrar")
+
+// EVENTO DE FILTRO 
+buscar.addEventListener("click", () => filtrarProductos())
+
+//renderizacion de productos
 renderizarProductos(productos, carrito)
 
+//funcion de renderizar y creado de tarjetas
 function renderizarProductos(productos, carrito) {
   let contenedor = document.getElementById("contenedor")
   contenedor.innerHTML = ""
@@ -72,6 +81,7 @@ function renderizarProductos(productos, carrito) {
   })
 }
 
+// funcion de agregar productos al carrito
 function agregarProductoAlCarrito(productos, carrito, e) {
   let productoBuscado = productos.find(producto => producto.id === Number(e.target.id))
   let productoEnCarrito = carrito.find(producto => producto.id === productoBuscado.id)
@@ -79,27 +89,28 @@ function agregarProductoAlCarrito(productos, carrito, e) {
     if (productoEnCarrito) {
       productoEnCarrito.unidades++
       productoEnCarrito.subtotal = productoEnCarrito.unidades * productoEnCarrito.precioUnitario
-    }else {
-     carrito.push({
-      id: productoBuscado.id,
-      nombre: productoBuscado.nombre,
-      precioUnitario: productoBuscado.precio,
-      unidades: 1,
-      subtotal: productoBuscado.precio
-     })
-   }
-   productoBuscado.stock--
-   alert("Producto agregado al carrito correctamente")
-  }else {
+    } else {
+      carrito.push({
+        id: productoBuscado.id,
+        nombre: productoBuscado.nombre,
+        precioUnitario: productoBuscado.precio,
+        unidades: 1,
+        subtotal: productoBuscado.precio
+      })
+    }
+    productoBuscado.stock--
+  } else {
     alert("No queda stock del producto seleccionado")
   }
   renderizarCarrito(carrito)
 }
 
+//funcion de agregar tarjetas al carrito
 function renderizarCarrito(productosEnCarrito) {
   let divCarrito = document.getElementById("carrito")
   divCarrito.innerHTML = ""
-  productosEnCarrito.forEach(producto =>{
+
+  productosEnCarrito.forEach(producto => {
     let cardProductoEnCarrito = document.createElement("div")
     cardProductoEnCarrito.innerHTML = `
     <img class=img src=./img_zapas/${producto.rutaimg}>
@@ -114,15 +125,23 @@ function renderizarCarrito(productosEnCarrito) {
 
 }
 
-let buscar = document.getElementById("buscar")
-let filtrar = document.getElementById("filtrar")
-
-buscar.addEventListener("click", () => filtrarProductos(productos))
-
-function filtrarProductos(productos) {
-  let productosFiltrados = productos.filter(producto => producto.marca.includes(filtrar.value))
-  renderizarProductos(productosFiltrados)
+//funcion de filtro por marca
+function filtrarProductos() {
+  let marcaFiltrada = filtrar.value.trim().toLowerCase()
+  let productosFiltrados = []
+  if (marcaFiltrada === "") {
+    productosFiltrados = productos
+    alert("La marca ingresada no pertenece a nuestros productos")
+  } else {
+    productosFiltrados = productos.filter(producto => producto.marca.toLowerCase().includes(marcaFiltrada))
+  }
+  renderizarProductos(productosFiltrados, carrito)
 }
+
+
+
+
+
 
 
 

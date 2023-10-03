@@ -35,6 +35,16 @@ const productos = [
 
 let carrito = []
 
+// JSON 
+let carritoGuardado = localStorage.getItem("carrito")
+
+if (carritoGuardado) {
+  carrito = JSON.parse(carritoGuardado)
+}
+
+
+
+
 // DOM 
 let buscar = document.getElementById("buscar")
 let filtrar = document.getElementById("filtrar")
@@ -42,7 +52,8 @@ let filtrar = document.getElementById("filtrar")
 // EVENTO DE FILTRO 
 buscar.addEventListener("click", () => filtrarProductos())
 
-//renderizacion de productos
+//renderizacion de productos y carrito
+renderizarCarrito(carrito)
 renderizarProductos(productos, carrito)
 
 //funcion de renderizar y creado de tarjetas
@@ -84,6 +95,7 @@ function agregarProductoAlCarrito(productos, carrito, e) {
       })
     }
     productoBuscado.stock--
+    localStorage.setItem("carrito", JSON.stringify(carrito))
   } else {
     alert("No queda stock del producto seleccionado")
   }
@@ -92,23 +104,40 @@ function agregarProductoAlCarrito(productos, carrito, e) {
 
 //funcion de agregar tarjetas al carrito
 function renderizarCarrito(productosEnCarrito) {
-  let divCarrito = document.getElementById("carrito")
-  divCarrito.innerHTML = ""
+  if (productosEnCarrito.length > 0) {
 
-  productosEnCarrito.forEach(producto => {
-    let cardProductoEnCarrito = document.createElement("div")
-    cardProductoEnCarrito.innerHTML = `
-    <img class=img src=./img_zapas/${producto.rutaimg}>
-    <p>${producto.nombre}
-    <p>$${producto.precioUnitario}
-    <p>${producto.unidades}
-    <p>$${producto.subtotal}
-    `
-    divCarrito.appendChild(cardProductoEnCarrito)
+    let divCarrito = document.getElementById("carrito")
+    divCarrito.innerHTML = ""
 
-  })
+    productosEnCarrito.forEach(producto => {
+      let cardProductoEnCarrito = document.createElement("div")
+      cardProductoEnCarrito.innerHTML = `
+      <img class=img src=./img_zapas/${producto.rutaimg}>
+      <p>${producto.nombre}
+      <p>$${producto.precioUnitario}
+      <p>${producto.unidades}
+      <p>$${producto.subtotal}
+      `
+      divCarrito.appendChild(cardProductoEnCarrito)
+    })
 
+    let botonFinalizar = document.getElementById("botonFinalizar")
+    botonFinalizar.addEventListener("click", finalizarCompra)
+  }
 }
+
+let total = carrito.reduce((acum, producto) => acum + producto.subtotal, 0)
+
+// Funcion finalizar compra
+
+function finalizarCompra() {
+  let carrito = document.getElementById("carrito")
+  carrito.innerHTML = ""
+  localStorage.removeItem("carrito")
+  alert("MUCHAS GRACIAS POR SU COMPRA EL TOTAL A PAGAR ES:" + productos.subtotal)
+}
+
+
 
 //funcion de filtro por marca
 function filtrarProductos() {

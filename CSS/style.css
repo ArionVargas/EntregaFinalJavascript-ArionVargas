@@ -13,6 +13,10 @@ body {
     background-size: cover;
 }
 
+.encabezado{
+    color: white;
+}
+
 .img {
     width: 150px;
     height: 150px;
@@ -28,7 +32,7 @@ body {
 }
 
 .cards {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(7, 14, 63, 0.5);
     border: 1px solid black;
     border-radius: 10px;
     box-shadow: 0 0 15px;
@@ -55,31 +59,46 @@ body {
     border-radius: 8px;
 }
 
+.btn-close {
+    color: white;
+    border: 1px solid white;
+}
+
+.offcanvas-title {
+    color: white;
+}
+
 .boton:hover {
     color: black;
     background-color: white;
 }
 
-.contenedorFiltro{
+.contenedorFiltro {
     display: flex;
     justify-content: space-around;
 }
 
-.buscador{
+.buscador {
     display: flex;
     justify-content: end;
 }
 
 .material-symbols-outlined {
     font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
-  }
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
 
-  #contenedor-logo-carrito{
+#contenedor-logo-carrito {
     position: sticky;
     display: flex;
     justify-content: space-between;
-  }
+}
+
+.offcanvas {
+    background-color: rgb(7, 14, 63);
+    display: flex;
+    justify-content: space-evenly;
+}

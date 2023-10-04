@@ -80,7 +80,7 @@ function renderizarProductos(productos, carrito) {
     contenedor.appendChild(tarjeta)
 
     let botonAgregarAlCarrito = document.getElementById(producto.id)
-    botonAgregarAlCarrito.addEventListener("click", (e) => agregarProductoAlCarrito(productos, carrito, e))
+    botonAgregarAlCarrito.addEventListener("click", (e) => agregarProductoAlCarrito(productos, e))
   })
 }
 
@@ -115,7 +115,7 @@ function agregarProductoAlCarrito(productos, e) {
 
 //funcion de agregar tarjetas al carrito
 function renderizarCarrito(productosEnCarrito) {
-  
+
   if (productosEnCarrito.length > 0) {
     let carrito = JSON.parse(localStorage.getItem("carrito")) || []
     let total = carrito.reduce((acum, producto) => acum + producto.subtotal, 0)
@@ -132,25 +132,37 @@ function renderizarCarrito(productosEnCarrito) {
       <p>$${producto.subtotal}
       `
       divCarrito.appendChild(cardProductoEnCarrito)
+
     })
     let botonFinalizar = document.getElementById("botonFinalizar")
     botonFinalizar.addEventListener("click", finalizarCompra)
+
   }
+
 }
+
+
 
 // Funcion finalizar compra
 function finalizarCompra() {
- /*  let carrito = document.getElementById("carrito") */
- let carrito = JSON.parse(localStorage.getItem("carrito")) || []
-  carrito.innerHTML = ""
+  let contenedorCarrito = document.getElementById("carrito")
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || []
+  contenedorCarrito.innerHTML = ""
   localStorage.removeItem("carrito")
-  recalcularTotal()
-  alert("MUCHAS GRACIAS POR SU COMPRA EL TOTAL A PAGAR ES: $" + total)
+  recalcularTotal(carrito)
+  Swal.fire({
+    title: 'Muchas gracias por su compra',
+    text: "Su total a pagar es:" + " $ " + total,
+    icon: 'success',
+  }
+  )
+  /* alert("MUCHAS GRACIAS POR SU COMPRA EL TOTAL A PAGAR ES: $" + total) */
 }
 
 // Función para recalcular el total
-function recalcularTotal() {
-  total = carrito.reduce((acum, producto) => acum + producto.subtotal, 0);
+function recalcularTotal(carrito) {
+  total = carrito.reduce((acum, producto) => acum + producto.subtotal, 0)
+
 }
 
 

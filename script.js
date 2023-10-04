@@ -34,6 +34,7 @@ const productos = [
 ]
 
 let carrito = []
+let total = 0
 
 // JSON 
 let carritoGuardado = localStorage.getItem("carrito")
@@ -87,6 +88,7 @@ function agregarProductoAlCarrito(productos, carrito, e) {
       productoEnCarrito.subtotal = productoEnCarrito.unidades * productoEnCarrito.precioUnitario
     } else {
       carrito.push({
+        rutaimg: productoBuscado.rutaimg,
         id: productoBuscado.id,
         nombre: productoBuscado.nombre,
         precioUnitario: productoBuscado.precio,
@@ -102,10 +104,13 @@ function agregarProductoAlCarrito(productos, carrito, e) {
   renderizarCarrito(carrito)
 }
 
+
+
 //funcion de agregar tarjetas al carrito
 function renderizarCarrito(productosEnCarrito) {
+  
   if (productosEnCarrito.length > 0) {
-
+    let total = carrito.reduce((acum, producto) => acum + producto.subtotal, 0)
     let divCarrito = document.getElementById("carrito")
     divCarrito.innerHTML = ""
 
@@ -120,13 +125,12 @@ function renderizarCarrito(productosEnCarrito) {
       `
       divCarrito.appendChild(cardProductoEnCarrito)
     })
-
     let botonFinalizar = document.getElementById("botonFinalizar")
     botonFinalizar.addEventListener("click", finalizarCompra)
   }
 }
 
-let total = carrito.reduce((acum, producto) => acum + producto.subtotal, 0)
+//
 
 // Funcion finalizar compra
 
@@ -134,7 +138,13 @@ function finalizarCompra() {
   let carrito = document.getElementById("carrito")
   carrito.innerHTML = ""
   localStorage.removeItem("carrito")
-  alert("MUCHAS GRACIAS POR SU COMPRA EL TOTAL A PAGAR ES:" + productos.subtotal)
+  recalcularTotal()
+  alert("MUCHAS GRACIAS POR SU COMPRA EL TOTAL A PAGAR ES: $" + total)
+}
+
+// Función para recalcular el total
+function recalcularTotal() {
+  total = carrito.reduce((acum, producto) => acum + producto.subtotal, 0);
 }
 
 

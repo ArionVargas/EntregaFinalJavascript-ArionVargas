@@ -98,6 +98,7 @@ body {
 }
 
 .offcanvas {
+    color: white;
     background-color: rgb(7, 14, 63);
     display: flex;
     justify-content: space-evenly;

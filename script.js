@@ -3,34 +3,41 @@
 // creacion de productos en ARRAY DE OBJEROS
 
 const productos = [
-  { id: 1, nombre: "response", marca: "adidas", precio: 58000, rutaimg: "adidas-response.jpg", sexo: "hombre", stock: 3 },
-  { id: 2, nombre: "grand court", marca: "adidas", precio: 45000, rutaimg: "adidas-grandcourt.jpg", sexo: "dama", stock: 5 },
-  { id: 3, nombre: "streetcheck", marca: "adidas", precio: 49000, rutaimg: "adidas-streetcheck.jpg", sexo: "dama", stock: 2 },
-  { id: 4, nombre: "streetcheck2", marca: "adidas", precio: 49000, rutaimg: "adidas-streetcheck2.jpg", sexo: "dama", stock: 1 },
-  { id: 5, nombre: "ultraboost", marca: "adidas", precio: 74000, rutaimg: "adidas-ultraboost.jpg", sexo: "hombre", stock: 4 },
-  { id: 6, nombre: "pureboost", marca: "adidas", precio: 53000, rutaimg: "adidas-pureboost.jpg", sexo: "dama", stock: 1 },
-  { id: 7, nombre: "hypersonic", marca: "asics", precio: 40000, rutaimg: "asics-hypersonic.jpg", sexo: "hombre", stock: 6 },
-  { id: 8, nombre: "equation", marca: "asics", precio: 36000, rutaimg: "asics-equation.jpg", sexo: "hombre", stock: 1 },
-  { id: 9, nombre: "gel-kamo", marca: "asics", precio: 31000, rutaimg: "asics-gelkamo.jpg", sexo: "dama", stock: 1 },
-  { id: 10, nombre: "nagoya", marca: "asics", precio: 83000, rutaimg: "asics-nagoya.jpg", sexo: "dama", stock: 1 },
-  { id: 11, nombre: "nimbus", marca: "asics", precio: 83000, rutaimg: "asics-nimbus.jpg", sexo: "dama", stock: 1 },
-  { id: 12, nombre: "cumulus", marca: "asics", precio: 65000, rutaimg: "asics-cumulus.jpg", sexo: "hombre", stock: 1 },
-  { id: 13, nombre: "cumulus2", marca: "asics", precio: 65000, rutaimg: "asics-cumulus2.jpg", sexo: "hombre", stock: 1 },
-  { id: 14, nombre: "pacemaker", marca: "asics", precio: 38000, rutaimg: "asics-pacemaker.jpg", sexo: "dama", stock: 1 },
-  { id: 15, nombre: "backhand", marca: "asics", precio: 33000, rutaimg: "asics-backhand.jpg", sexo: "hombre", stock: 1 },
-  { id: 16, nombre: "padel1", marca: "bullpadel", precio: 109000, rutaimg: "bullpadel-padel1.jpg", sexo: "hombre", stock: 1 },
-  { id: 17, nombre: "vertex", marca: "bullpadel", precio: 109000, rutaimg: "bullpadel-vertex.jpg", sexo: "hombre", stock: 1 },
-  { id: 18, nombre: "flow", marca: "bullpadel", precio: 23000, rutaimg: "bullpadel-flow.jpg", sexo: "dama", stock: 1 },
-  { id: 19, nombre: "hybrid", marca: "bullpadel", precio: 125000, rutaimg: "bullpadel-hybrid.jpg", sexo: "dama", stock: 1 },
-  { id: 20, nombre: "gm500sd", marca: "newbalance", precio: 36000, rutaimg: "newbalance-gm500sd.jpg", sexo: "hombre", stock: 1 },
-  { id: 21, nombre: "m520hd", marca: "newbalance", precio: 36000, rutaimg: "newbalance-m520hd.jpg", sexo: "hombre", stock: 1 },
-  { id: 22, nombre: "ml570tb", marca: "newbalance", precio: 49000, rutaimg: "newbalance-ml570tb.jpg", sexo: "dama", stock: 1 },
-  { id: 23, nombre: "gw112c", marca: "newbalance", precio: 36000, rutaimg: "newbalance-gw112c.jpg", sexo: "dama", stock: 1 },
-  { id: 24, nombre: "we1080ll", marca: "newbalance", precio: 37000, rutaimg: "newbalance-we1080ll.jpg", sexo: "dama", stock: 1 },
-  { id: 25, nombre: "charged", marca: "underarmour", precio: 35000, rutaimg: "underarmour-charged.jpg", sexo: "hombre", stock: 1 },
-  { id: 26, nombre: "charged2", marca: "underarmour", precio: 38000, rutaimg: "underarmour-charged2.jpg", sexo: "hombre", stock: 1 },
-  { id: 27, nombre: "pacer", marca: "underarmour", precio: 42000, rutaimg: "underarmour-pacer.jpg", sexo: "dama", stock: 1 },
-  { id: 28, nombre: "cahrged3", marca: "underarmour", precio: 37000, rutaimg: "underarmour-charged3.jpg", sexo: "hombre", stock: 1 },
+  { id: 1, nombre: "response", marca: "adidas", precio: 58000, rutaimg: "adidas-response.png", sexo: "hombre", stock: 3 },
+  { id: 2, nombre: "grand court", marca: "adidas", precio: 45000, rutaimg: "adidas-grandcourt.png", sexo: "dama", stock: 5 },
+  { id: 3, nombre: "streetcheck", marca: "adidas", precio: 49000, rutaimg: "adidas-streetcheck.png", sexo: "dama", stock: 3 },
+  { id: 4, nombre: "streetcheck2", marca: "adidas", precio: 49000, rutaimg: "adidas-streetcheck2.png", sexo: "dama", stock: 5 },
+  { id: 5, nombre: "ultraboost", marca: "adidas", precio: 74000, rutaimg: "adidas-ultraboost.png", sexo: "hombre", stock: 4 },
+  { id: 6, nombre: "pureboost", marca: "adidas", precio: 53000, rutaimg: "adidas-pureboost.png", sexo: "dama", stock: 6 },
+  { id: 7, nombre: "hypersonic", marca: "asics", precio: 40000, rutaimg: "asics-hypersonic.png", sexo: "hombre", stock: 6 },
+  { id: 8, nombre: "equation", marca: "asics", precio: 36000, rutaimg: "asics-equation.png", sexo: "hombre", stock: 21 },
+  { id: 9, nombre: "gel-kamo", marca: "asics", precio: 31000, rutaimg: "asics-gelkamo.png", sexo: "dama", stock: 14 },
+  { id: 10, nombre: "nagoya", marca: "asics", precio: 83000, rutaimg: "asics-nagoya.png", sexo: "dama", stock: 3 },
+  { id: 11, nombre: "nimbus", marca: "asics", precio: 83000, rutaimg: "asics-nimbus.png", sexo: "dama", stock: 2 },
+  { id: 12, nombre: "cumulus", marca: "asics", precio: 65000, rutaimg: "asics-cumulus.png", sexo: "hombre", stock: 11 },
+  { id: 13, nombre: "cumulus2", marca: "asics", precio: 65000, rutaimg: "asics-cumulus2.png", sexo: "hombre", stock: 14 },
+  { id: 14, nombre: "pacemaker", marca: "asics", precio: 38000, rutaimg: "asics-pacemaker.png", sexo: "dama", stock: 2 },
+  { id: 15, nombre: "backhand", marca: "asics", precio: 33000, rutaimg: "asics-backhand.png", sexo: "hombre", stock: 3 },
+  { id: 16, nombre: "padel1", marca: "bullpadel", precio: 109000, rutaimg: "bullpadel-padel1.png", sexo: "hombre", stock: 20 },
+  { id: 17, nombre: "vertex", marca: "bullpadel", precio: 109000, rutaimg: "bullpadel-vertex.png", sexo: "hombre", stock: 15 },
+  { id: 18, nombre: "flow", marca: "bullpadel", precio: 23000, rutaimg: "bullpadel-flow.png", sexo: "dama", stock: 7 },
+  { id: 19, nombre: "hybrid", marca: "bullpadel", precio: 125000, rutaimg: "bullpadel-hybrid.png", sexo: "dama", stock: 14 },
+  { id: 20, nombre: "gm500sd", marca: "newbalance", precio: 36000, rutaimg: "newbalance-gm500sd.png", sexo: "hombre", stock: 8 },
+  { id: 21, nombre: "m520hd", marca: "newbalance", precio: 36000, rutaimg: "newbalance-m520hd.png", sexo: "hombre", stock: 3 },
+  { id: 22, nombre: "ml570tb", marca: "newbalance", precio: 49000, rutaimg: "newbalance-ml570tb.png", sexo: "dama", stock: 13 },
+  { id: 23, nombre: "gw112c", marca: "newbalance", precio: 36000, rutaimg: "newbalance-gw112c.png", sexo: "dama", stock: 12 },
+  { id: 24, nombre: "we1080ll", marca: "newbalance", precio: 37000, rutaimg: "newbalance-we1080ll.png", sexo: "dama", stock: 7 },
+  { id: 25, nombre: "charged", marca: "underarmour", precio: 35000, rutaimg: "underarmour-charged.png", sexo: "hombre", stock: 6 },
+  { id: 26, nombre: "charged2", marca: "underarmour", precio: 38000, rutaimg: "underarmour-charged2.png", sexo: "hombre", stock: 3 },
+  { id: 27, nombre: "pacer", marca: "underarmour", precio: 42000, rutaimg: "underarmour-pacer.png", sexo: "dama", stock: 9 },
+  { id: 28, nombre: "cahrged3", marca: "underarmour", precio: 37000, rutaimg: "underarmour-charged3.png", sexo: "hombre", stock: 6 },
+  { id: 29, nombre: "adidas-vulcraider", marca: "adidas", precio: 46000, rutaimg: "adidas-vulcraider.png", sexo: "dama", stock: 5 },
+  { id: 30, nombre: "adidas-ultraboostdama", marca: "adidas", precio: 74000, rutaimg: "adidas-ultraboostdama.png", sexo: "dama", stock: 3 },
+  { id: 31, nombre: "adidas-terrex-soul", marca: "adidas", precio: 69000, rutaimg: "adidas-terrex-soul.png", sexo: "dama", stock: 5 },
+  { id: 32, nombre: "adidas-terrex", marca: "adidas", precio: 63000, rutaimg: "adidas-terrex.png", sexo: "hombre", stock: 7 },
+  { id: 33, nombre: "adidas-streetcheckhombre", marca: "adidas", precio: 54000, rutaimg: "adidas-streetcheckhombre.png", sexo: "hombre", stock: 22 },
+  { id: 34, nombre: "adidas-nmd", marca: "adidas", precio: 58000, rutaimg: "adidas-nmd.png", sexo: "hombre", stock: 10 },
+  { id: 35, nombre: "adidas-grandcourthombre", marca: "adidas", precio: 41000, rutaimg: "adidas-grandcourthombre.png", sexo: "hombre", stock: 10 }
 ]
 
 let carrito = []
@@ -66,7 +73,8 @@ function renderizarProductos(productos, carrito) {
     let tarjeta = document.createElement("div")
     tarjeta.className = "cards"
 
-    tarjeta.innerHTML = `<h3 class=nombreZapa>${producto.nombre}</h3>
+    tarjeta.innerHTML = `<h3 class=nombreMarca>${producto.marca}<h3>
+    <h5 class=nombreZapa>${producto.nombre}</h5>
     <img class=img src=./img_zapas/${producto.rutaimg}>
     <p class=precioZapa>$ ${producto.precio}</p>
     <button class=boton id=${producto.id}>agregar al carrito</button> 

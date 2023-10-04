@@ -18,6 +18,7 @@ body {
     color: white;
 }
 
+
 .img {
     width: 150px;
     height: 150px;
@@ -99,10 +100,20 @@ body {
 }
 
 #contenedor-logo-carrito {
+    width: 100%;
+    padding: 0;
+    margin: 0;
     position: sticky;
     display: flex;
     justify-content: space-between;
 }
+
+.logoTienda{
+    padding: 0;
+    margin: 0;
+    width: 50px;
+}
+
 
 .offcanvas {
     color: white;

@@ -51,8 +51,6 @@ if (carritoGuardado) {
 }
 
 
-
-
 // DOM 
 let buscar = document.getElementById("buscar")
 let filtrar = document.getElementById("filtrar")
@@ -87,7 +85,8 @@ function renderizarProductos(productos, carrito) {
 }
 
 // funcion de agregar productos al carrito
-function agregarProductoAlCarrito(productos, carrito, e) {
+function agregarProductoAlCarrito(productos, e) {
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || []
   let productoBuscado = productos.find(producto => producto.id === Number(e.target.id))
   let productoEnCarrito = carrito.find(producto => producto.id === productoBuscado.id)
   if (productoBuscado.stock > 0) {
@@ -118,6 +117,7 @@ function agregarProductoAlCarrito(productos, carrito, e) {
 function renderizarCarrito(productosEnCarrito) {
   
   if (productosEnCarrito.length > 0) {
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || []
     let total = carrito.reduce((acum, producto) => acum + producto.subtotal, 0)
     let divCarrito = document.getElementById("carrito")
     divCarrito.innerHTML = ""
@@ -138,12 +138,10 @@ function renderizarCarrito(productosEnCarrito) {
   }
 }
 
-//
-
 // Funcion finalizar compra
-
 function finalizarCompra() {
-  let carrito = document.getElementById("carrito")
+ /*  let carrito = document.getElementById("carrito") */
+ let carrito = JSON.parse(localStorage.getItem("carrito")) || []
   carrito.innerHTML = ""
   localStorage.removeItem("carrito")
   recalcularTotal()

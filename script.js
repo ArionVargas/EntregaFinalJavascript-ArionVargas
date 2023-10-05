@@ -31,13 +31,13 @@ const productos = [
   { id: 26, nombre: "charged2", marca: "underarmour", precio: 38000, rutaimg: "underarmour-charged2.png", sexo: "hombre", stock: 3 },
   { id: 27, nombre: "pacer", marca: "underarmour", precio: 42000, rutaimg: "underarmour-pacer.png", sexo: "dama", stock: 9 },
   { id: 28, nombre: "cahrged3", marca: "underarmour", precio: 37000, rutaimg: "underarmour-charged3.png", sexo: "hombre", stock: 6 },
-  { id: 29, nombre: "adidas-vulcraider", marca: "adidas", precio: 46000, rutaimg: "adidas-vulcraider.png", sexo: "dama", stock: 5 },
-  { id: 30, nombre: "adidas-ultraboostdama", marca: "adidas", precio: 74000, rutaimg: "adidas-ultraboostdama.png", sexo: "dama", stock: 3 },
-  { id: 31, nombre: "adidas-terrex-soul", marca: "adidas", precio: 69000, rutaimg: "adidas-terrex-soul.png", sexo: "dama", stock: 5 },
-  { id: 32, nombre: "adidas-terrex", marca: "adidas", precio: 63000, rutaimg: "adidas-terrex.png", sexo: "hombre", stock: 7 },
-  { id: 33, nombre: "adidas-streetcheckhombre", marca: "adidas", precio: 54000, rutaimg: "adidas-streetcheckhombre.png", sexo: "hombre", stock: 22 },
-  { id: 34, nombre: "adidas-nmd", marca: "adidas", precio: 58000, rutaimg: "adidas-nmd.png", sexo: "hombre", stock: 10 },
-  { id: 35, nombre: "adidas-grandcourthombre", marca: "adidas", precio: 41000, rutaimg: "adidas-grandcourthombre.png", sexo: "hombre", stock: 10 }
+  { id: 29, nombre: "vulcraider", marca: "adidas", precio: 46000, rutaimg: "adidas-vulcraider.png", sexo: "dama", stock: 5 },
+  { id: 30, nombre: "ultraboostdama", marca: "adidas", precio: 74000, rutaimg: "adidas-ultraboostdama.png", sexo: "dama", stock: 3 },
+  { id: 31, nombre: "terrex-soul", marca: "adidas", precio: 69000, rutaimg: "adidas-terrex-soul.png", sexo: "dama", stock: 5 },
+  { id: 32, nombre: "terrex", marca: "adidas", precio: 63000, rutaimg: "adidas-terrex.png", sexo: "hombre", stock: 7 },
+  { id: 33, nombre: "streetcheckhombre", marca: "adidas", precio: 54000, rutaimg: "adidas-streetcheckhombre.png", sexo: "hombre", stock: 22 },
+  { id: 34, nombre: "nmd", marca: "adidas", precio: 58000, rutaimg: "adidas-nmd.png", sexo: "hombre", stock: 10 },
+  { id: 35, nombre: "grandcourthombre", marca: "adidas", precio: 41000, rutaimg: "adidas-grandcourthombre.png", sexo: "hombre", stock: 10 }
 ]
 
 let carrito = []

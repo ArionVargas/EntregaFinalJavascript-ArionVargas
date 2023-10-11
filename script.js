@@ -2,6 +2,18 @@
 
 // creacion de productos en ARRAY DE OBJEROS
 
+/* let carrito = []
+let total = 0
+
+// JSON 
+let carritoGuardado = localStorage.getItem("carrito")
+
+fetch("./info.json")
+  .then(respuesta => respuesta.json())
+  .then(productos => renderizarProductos(productos,carrito))
+  .catch(error => alert())
+ */
+
 const productos = [
   { id: 1, nombre: "response", marca: "adidas", precio: 58000, rutaimg: "adidas-response.png", sexo: "hombre", stock: 3 },
   { id: 2, nombre: "grand court", marca: "adidas", precio: 45000, rutaimg: "adidas-grandcourt.png", sexo: "dama", stock: 5 },
@@ -105,6 +117,7 @@ function agregarProductoAlCarrito(productos, e) {
     }
     productoBuscado.stock--
     localStorage.setItem("carrito", JSON.stringify(carrito))
+    tostada(`Producto agregado al carrito`,1500)
   } else {
     alert("No queda stock del producto seleccionado")
   }
@@ -150,19 +163,25 @@ function finalizarCompra() {
   contenedorCarrito.innerHTML = ""
   localStorage.removeItem("carrito")
   recalcularTotal(carrito)
-  Swal.fire({
-    title: 'Muchas gracias por su compra',
-    text: "Su total a pagar es:" + " $ " + total,
-    icon: 'success',
-  }
-  )
-  /* alert("MUCHAS GRACIAS POR SU COMPRA EL TOTAL A PAGAR ES: $" + total) */
+  alertaFinalizarCompra(`top-start`, 'Muchas gracias por su compra', "Su total a pagar es:" + " $ " + total, 'success', 2000, false)
 }
 
 // Función para recalcular el total
 function recalcularTotal(carrito) {
   total = carrito.reduce((acum, producto) => acum + producto.subtotal, 0)
 
+}
+
+// funcion alerta de finalizar compra
+function alertaFinalizarCompra(position, title, text, icon, timer, showConfirmButton,) {
+  Swal.fire({
+    position,
+    title,
+    text,
+    icon,
+    timer,
+    showConfirmButton,
+  })
 }
 
 
@@ -180,3 +199,11 @@ function filtrarProductos() {
   renderizarProductos(productosFiltrados, carrito)
 }
 
+// funcion de alerta de agregado al carrito
+function tostada(text, duration) {
+  Toastify({
+    text,
+    duration,
+    className:"tostada"
+  }).showToast()
+}

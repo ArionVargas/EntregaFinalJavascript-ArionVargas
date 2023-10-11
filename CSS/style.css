@@ -87,10 +87,6 @@ body {
     justify-content: space-around;
 }
 
-.buscador {
-    display: flex;
-    justify-content: end;
-}
 
 .material-symbols-outlined {
     font-variation-settings:

@@ -117,7 +117,7 @@ function agregarProductoAlCarrito(productos, e) {
     }
     productoBuscado.stock--
     localStorage.setItem("carrito", JSON.stringify(carrito))
-    tostada(`Producto agregado al carrito`,1500)
+    tostada(`Producto agregado al carrito`, 1500)
   } else {
     alert("No queda stock del producto seleccionado")
   }
@@ -204,6 +204,6 @@ function tostada(text, duration) {
   Toastify({
     text,
     duration,
-    className:"tostada"
+    className: "tostada"
   }).showToast()
 }

@@ -1,6 +1,3 @@
-// HOLA TUTOR CORRECTOR 
-
-// creacion de productos en ARRAY DE OBJEROS
 
 /* let carrito = []
 let total = 0
@@ -70,11 +67,11 @@ let filtrar = document.getElementById("filtrar")
 // EVENTO DE FILTRO 
 buscar.addEventListener("click", () => filtrarProductos())
 
-//renderizacion de productos y carrito
+
 renderizarCarrito(carrito)
 renderizarProductos(productos, carrito)
 
-//funcion de renderizar y creado de tarjetas
+
 function renderizarProductos(productos, carrito) {
   let contenedor = document.getElementById("contenedor")
   contenedor.innerHTML = ""
@@ -96,7 +93,7 @@ function renderizarProductos(productos, carrito) {
   })
 }
 
-// funcion de agregar productos al carrito
+
 function agregarProductoAlCarrito(productos, e) {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || []
   let productoBuscado = productos.find(producto => producto.id === Number(e.target.id))
@@ -126,7 +123,7 @@ function agregarProductoAlCarrito(productos, e) {
 
 
 
-//funcion de agregar tarjetas al carrito
+
 function renderizarCarrito(productosEnCarrito) {
 
   if (productosEnCarrito.length > 0) {
@@ -155,8 +152,6 @@ function renderizarCarrito(productosEnCarrito) {
 }
 
 
-
-// Funcion finalizar compra
 function finalizarCompra() {
   let contenedorCarrito = document.getElementById("carrito")
   let carrito = JSON.parse(localStorage.getItem("carrito")) || []
@@ -166,13 +161,13 @@ function finalizarCompra() {
   alertaFinalizarCompra(`top-start`, 'Muchas gracias por su compra', "Su total a pagar es:" + " $ " + total, 'success', 2000, false)
 }
 
-// Función para recalcular el total
+
 function recalcularTotal(carrito) {
   total = carrito.reduce((acum, producto) => acum + producto.subtotal, 0)
 
 }
 
-// funcion alerta de finalizar compra
+
 function alertaFinalizarCompra(position, title, text, icon, timer, showConfirmButton,) {
   Swal.fire({
     position,
@@ -186,7 +181,6 @@ function alertaFinalizarCompra(position, title, text, icon, timer, showConfirmBu
 
 
 
-//funcion de filtro por marca
 function filtrarProductos() {
   let marcaFiltrada = filtrar.value.trim().toLowerCase()
   let productosFiltrados = []
@@ -199,7 +193,7 @@ function filtrarProductos() {
   renderizarProductos(productosFiltrados, carrito)
 }
 
-// funcion de alerta de agregado al carrito
+
 function tostada(text, duration) {
   Toastify({
     text,

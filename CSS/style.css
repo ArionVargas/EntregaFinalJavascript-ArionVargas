@@ -134,3 +134,12 @@ body {
 .tostada {
     border-radius: 10px;
 }
+
+@media screen and (max-width: 768px) {
+    .contenedorFiltro{
+        display: flex;
+        flex-direction: column;
+    }
+
+    
+}

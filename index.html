@@ -21,9 +21,10 @@
 </head>
 
 <body>
-    <header>
+    <header class="contenedorCabezera">
         <nav id="contenedor-logo-carrito">
-            <div><img class="logoTienda" src="./img_zapas/logo-tienda.png"></div>
+            <div class="divLogo"><img class="logoTienda" src="./img_zapas/logo-tienda.png"></div>
+            <h1 id="titulo">WEBSNEAKERS</h1>
             <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                 aria-controls="offcanvasRight"><span class="material-symbols-outlined">
                     garden_cart
@@ -41,14 +42,11 @@
             </div>
         </nav>
     </header>
-    <h1 id="titulo">WEBSNEAKERS</h1>
     <div class="contenedorFiltro">
         <h3 class="encabezado">Bienvenido/a aqui puedes filtrar por Marca </h3>
         <div class="buscador">
-            <input id="filtrar" type="search" placeholder="ingrese marca">
+            <input class="inputFiltrar" id="filtrar" type="search" placeholder="ingrese marca">
             <button id="buscar" type="button" class="btn btn-outline-light">buscar calzado</button>
-            <button id="buscar" type="button" class="btn btn-outline-light">filtrar por genero</button>
-            <button id="buscar" type="button" class="btn btn-outline-light">filtrar por precio</button>
         </div>
     </div>
 

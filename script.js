@@ -2,12 +2,12 @@
 let carrito = []
 
 fetch("./info.json")
-.then(respuesta => respuesta.json())
-.then(productos => principal(productos))
-.catch(error => alert(error))
+  .then(respuesta => respuesta.json())
+  .then(productos => principal(productos))
+  .catch(error => alert(error))
 
-function principal (productos) {
-  
+function principal(productos) {
+
   let carritoGuardado = localStorage.getItem("carrito")
   if (carritoGuardado) {
     carrito = JSON.parse(carritoGuardado)
@@ -16,10 +16,9 @@ function principal (productos) {
   renderizarCarrito(carrito, total)
   renderizarProductos(productos, carrito)
   let buscar = document.getElementById("buscar")
-  
+
   buscar.addEventListener("click", () => filtrarProductos(productos))
-  let filtrar = document.getElementById("filtrar")
-  
+
 }
 
 
@@ -46,7 +45,7 @@ function renderizarProductos(productos, carrito) {
 
 
 function agregarProductoAlCarrito(productos, e) {
-  //let carrito = JSON.parse(localStorage.getItem("carrito")) || []
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || []
   let productoBuscado = productos.find(producto => producto.id === Number(e.target.id))
   let productoEnCarrito = carrito.find(producto => producto.id === productoBuscado.id)
   if (productoBuscado.stock > 0) {
@@ -111,7 +110,7 @@ function finalizarCompra() {
 
   localStorage.removeItem("carrito")
   carrito = []
-
+renderizarCarrito(carrito,total)
   alertaFinalizarCompra(`top-start`, 'Muchas gracias por su compra', "Su total a pagar es:" + " $ " + total, 'success', 2000, false)
 }
 

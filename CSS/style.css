@@ -14,8 +14,16 @@ body {
     background-size: cover;
 }
 
+.contenedorCabezera{
+margin: 0;
+padding: 0;
+}
+
+.divLogo{
+    margin: 0;
+}
+
 #titulo {
-    height: 100px;
     display: flex;
     justify-content: center;
 }
@@ -70,6 +78,12 @@ body {
     display: flex;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.0);
+    color: white;
+    border-radius: 8px;
+}
+
+.inputFiltrar{
+    height: 38px;
     color: white;
     border-radius: 8px;
 }

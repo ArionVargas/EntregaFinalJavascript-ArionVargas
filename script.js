@@ -110,7 +110,7 @@ function finalizarCompra() {
 
   localStorage.removeItem("carrito")
   carrito = []
-renderizarCarrito(carrito,total)
+  renderizarCarrito(carrito, total)
   alertaFinalizarCompra(`top-start`, 'Muchas gracias por su compra', "Su total a pagar es:" + " $ " + total, 'success', 2000, false)
 }
 

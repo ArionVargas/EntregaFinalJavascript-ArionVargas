@@ -14,12 +14,12 @@ body {
     background-size: cover;
 }
 
-.contenedorCabezera{
-margin: 0;
-padding: 0;
+.contenedorCabezera {
+    margin: 0;
+    padding: 0;
 }
 
-.divLogo{
+.divLogo {
     margin: 0;
 }
 
@@ -68,7 +68,6 @@ padding: 0;
 
 .precioZapa {
     color: white;
-    position: relative;
     display: flex;
     justify-content: center;
 }
@@ -82,9 +81,8 @@ padding: 0;
     border-radius: 8px;
 }
 
-.inputFiltrar{
+.inputFiltrar {
     height: 38px;
-    color: white;
     border-radius: 8px;
 }
 
@@ -150,10 +148,10 @@ padding: 0;
 }
 
 @media screen and (max-width: 768px) {
-    .contenedorFiltro{
+    .contenedorFiltro {
         display: flex;
         flex-direction: column;
     }
 
-    
+
 }

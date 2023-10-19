@@ -78,7 +78,6 @@ function renderizarCarrito(productosEnCarrito, total) {
 
   if (productosEnCarrito.length > 0) {
     let carrito = JSON.parse(localStorage.getItem("carrito")) || []
-    let total = carrito.reduce((acum, producto) => acum + producto.subtotal, 0)
     let divCarrito = document.getElementById("carrito")
     divCarrito.innerHTML = ""
 
